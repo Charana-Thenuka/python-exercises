@@ -17,6 +17,10 @@ print("values: ", values);
 keys = my_dic.keys();
 print("keys: ", keys);
 
+# access items
+access = my_dic["model"];
+print("Access Items: ",access);
+
 # change items
 my_dic.update({"model":"Ferary"});
 print(my_dic);

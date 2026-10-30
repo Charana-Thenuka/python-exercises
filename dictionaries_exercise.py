@@ -24,3 +24,5 @@ students = {
 
 names_and_marks = students.values();
 print(names_and_marks);
+
+# Using the same dictionary, find the student who achieved the highest marks.
