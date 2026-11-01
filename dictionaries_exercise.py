@@ -8,14 +8,27 @@ students = {
 }
 
 marks = students.values();
-items = students.keys();
-print(items);
 
 # Higest Mark
 highest_mark = 0;
+highest_name = "";
 
-for x in marks:
-    if(highest_mark < x):
-        highest_mark = x;
+for name, marks in students.items():
+    if(highest_mark < marks):
+        highest_mark = marks;
+        highest_name = name;
 
 print("Highest Mark: ",highest_mark)
+print("Name: ",highest_name);
+
+# remove Duplicates from list
+list = [10,20,30,10,52,10,20,58];
+string_list = ["Kamal", "Nimal", "Vimal", "Kamal", "Vimal"];
+unique_list = set(list);
+string_unique_list = set(string_list);
+
+print("Unique List: ", unique_list);
+print("Unique String List: ", string_unique_list);
+
+
+
