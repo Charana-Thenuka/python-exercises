@@ -1,28 +1,21 @@
 # Create a dictionary containing 5 students and their marks. Display all student names and marks.
 students = {
-    "student1" : {
-        "name":"Kamal",
-        "mark":75
-    },
-    "student2" : {
-        "name":"Amal",
-        "mark":80
-    },
-    "student3" : {
-        "name":"Nimal",
-        "mark":50
-    },
-    "student4" : {
-        "name":"Vimal",
-        "mark":60
-    },
-    "student5" : {
-        "name":"Sunil",
-        "mark":10
-    }
+    "Kamal":75,
+    "Nimal":80,
+    "Vimal":85,
+    "Amal": 95,
+    "Saman": 80
 }
 
-names_and_marks = students.values();
-print(names_and_marks);
+marks = students.values();
+items = students.keys();
+print(items);
 
-# Using the same dictionary, find the student who achieved the highest marks.
+# Higest Mark
+highest_mark = 0;
+
+for x in marks:
+    if(highest_mark < x):
+        highest_mark = x;
+
+print("Highest Mark: ",highest_mark)
