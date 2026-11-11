@@ -1,77 +1,52 @@
 '''
+    Concepts: Variables, input, conditions, loops, lists, dictionaries, functions.
+
     Requirements:
-    1. Create a dictionary containing at least 5 students and their marks.
+    1. Create a dictionary containing five students and their marks.
     2. Display all student names and marks.
-    3. Find the student with the highest marks.
-    4. Find the student with the lowest marks.
-    5. Calculate the average marks.
-    6. Display students who scored more than 75 marks.
-    7. Allow the user to search for a student by name.
+    3. Find the highest and lowest marks.
+    4. Calculate the average mark.
+    5. Display students who passed (marks 50 or above).
+    6. Search for a student by name.
+    7. Create a function to calculate a student's grade.
 '''
 
 students = {
-    "kamal": 31,
-    "Nimal": 80,
-    "Sunil": 76,
-    "Vimal": 70,
-    "Chamil": 75
+    "Kamal" : 80,
+    "Nimal" : 90,
+    "Vimal" : 50,
+    "Anil" : 60,
+    "Sunil" : 85
 }
 
-# display all students names and marks
-print(students.items());
+for student in students.values():
+    print(student);
 
-# 3. find the student with higest mark
-highest_mark = 0;
-highest_mark_name = "";
+lenght = len(students);
+sum = 0;
 
-for name, mark in students.items():
-    if (highest_mark < mark):
-        highest_mark = mark;
-        highest_mark_name = name;
+# Average Mark
+for average in students.values():
+    sum = sum + average;
 
-print("Highest Mark: ", highest_mark);
-print("Name of the highest mark: ",highest_mark_name);
+average = sum / lenght;
+print("Average is: ", average);
 
-# 4. Find the student with the lowest marks.
-lowest_mark = students["kamal"];
-lowest_mark_name = "";
+passed_students = [];
+for passed in students.values():
+    if (passed >= 50):
+        passed_students.append(passed);
 
-for name, mark in students.items():
-    if lowest_mark >= mark:
-        lowest_mark = mark;
-        lowest_mark_name = name;
+print(passed_students);
 
-print("Lowest Mark: ", lowest_mark);
-print("Name of the lowest mark: ",lowest_mark_name);
+# search the students by name
+search = input("search student: ");
 
-# 5. Calculate the average marks.
-elements_count = len(students);
-sum_of_values = 0;
+for search_student in students.keys():
+    if (search == search_student):
+        print(f"{search}, is available");
 
-for mark in students.values():
-    sum_of_values = sum_of_values + mark;
 
-average = sum_of_values / elements_count;
-print("Average Mark: ", average);
 
-# 6. Display students who scored more than 75 marks.
-student_list = [];
 
-for name,mark in students.items():
-    if mark > 75:
-        student_list.append(name);
 
-print(student_list);
-
-# 7. Allow the user to search for a student by name.
-username = input("Search the user: ");
-is_user_found = False;
-
-for name, mark in students.items():
-    if username == name:
-        is_user_found = True;
-        
-if(is_user_found):
-    print("User Found!");
-else:
-    print("User Unavilable!");
